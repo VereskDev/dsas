@@ -1,0 +1,331 @@
+body{
+    font-family: 'TT Lakes';
+}
+
+.header__wrapper{
+    display: flex;
+    width: 100%;
+    /* для адаптивной */
+    min-width: 320px; 
+    height: 88px;
+    align-items: center;
+    /* Два значения — первое определяет поля сверху и снизу для элемента */
+    padding: 24px 16px;
+    border-bottom: thin solid #D9FFF5;
+    background-color: #FFFFFF;
+}
+
+.header-nav{
+    /* какое количество свободного пространства флекс-контейнера может занимать текущий элемент */
+    flex-shrink: 0; 
+    /* мы используем в тех случаях, когда места не хватает и размеры элементов флекс-контейнера нужно уменьшить */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-size: cover;
+    /* масштабируется так, чтобы полностью заполнить фон элемента, возможно, обрезая его */
+}
+
+.header-logo{
+    margin-right: auto;
+}
+
+/* чеховское ружьё, выстрелит, когда будем делать адаптивную верстку */
+.call,
+.chat,
+.profile{
+    display: none;
+}
+
+.header-divider {
+    width: 2px;
+    height: 32px;
+    margin: 0 20px;
+    border:none;
+    border-left: 2px solid #EAEAEA;
+    border-radius: 1px;
+}
+
+/* Он находит элементы, не соответствующие селектору  */
+.header-nav:not(:last-of-type){
+    margin-right: 16px;
+}
+
+.burger-icon{
+    background-image: url(/img/svg/burger.svg)
+}
+
+.call-icon{
+    background-image: url(/img/svg/call.svg);
+}
+.chat-icon{
+    background-image: url(/img/svg/chat.svg);
+}
+.profile-icon{
+    background-image: url(/img/svg/profile.svg);
+}
+.repair-icon{
+    background-image: url(/img/svg/repair.svg);
+}
+.status-icon{
+    background-image: url(/img/svg/checkstatus.svg);
+}
+
+.main{
+    background-color: #F8F8F8;
+    padding-top: 20px;
+    height: 100vw; 
+    /* 100% от чего? */
+}
+
+.main-title {
+    border: 3px solid transparent;
+    border-left-color: #41F6D7;
+    padding-left: 12px;
+}
+
+.title{
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.6px;
+    line-height: 40px;
+    
+}
+
+
+
+.title_title{
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.6px;
+    line-height: 40px;
+}
+
+.title-buttons{
+    display: none;
+}
+
+.main-slidemenu-list{
+    margin-top: 24px;
+    margin-left: 16px;
+    display: flex;
+    overflow: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+.main-slidemenu-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+.main-slidemenu-link{
+    padding: 6px 15px;
+    display: inline-block;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    line-height: 1.5;
+    color: #7E7E82;
+}
+.main-slidemenu-list-item{
+    flex-shrink: 0;
+}
+
+.main-slidemenu_link:focus,
+.main-slidemenu_link:hover{
+    background-color: #FFFFFF;
+    border-color: solid #B8FFEC;
+    border-radius: 6px;
+    border: 2px 
+}
+.caption-text{
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 24px;
+}
+.caption-text__maintext{
+    height: 90px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: #1B1C21;
+    font-size: 14px;
+    width: 288px;
+    /*  это для мобилки, для десктопа вылезет потом в медиа*/
+    overflow: hidden; 
+    width: 100%;
+}
+
+.caption__buttonwrapper{
+    margin-top: 16px;
+}
+
+.caption__expand{
+    width: 132px;
+    height: 24px;
+    font-size: 16px;
+    font-weight: 500px;
+    letter-spacing: -0.2px;
+    background-color: #F8F8F8;
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    background: url(/img/svg/expand.svg) no-repeat left center;
+}
+.caption_imagewrapper{
+    margin-top: 16px;
+    
+}
+.caption-image{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+@media (min-width: 768px){
+    .header {
+        min-width: 768px;
+    }
+
+    .header-divider{
+        display: block;
+        
+    }
+    .call,
+    .chat,
+    .profile{
+        display: block;
+    }
+
+    .main-title{
+        width: 257px;
+height: 40px;
+top: 112px;
+gap: 0px;
+opacity: 0px;
+    }
+    .main-slidemenu{
+        margin-left: 24px;
+    }
+.caption{
+    display: flex;
+    /* высота блока с текстом */
+    height: 208px; 
+    margin: 30px 24px;
+    gap: 48px;
+}
+}
+.caption-text{
+    margin-left: px;
+    flex: 1 1 50%;
+}
+.caption-text__maintext{
+    /* просто изменяя высоту меняется оверфло */
+    height: 160px;
+   
+    line-height: 20px;
+   
+    overflow: hidden;
+
+}  
+.caption__buttonwrapper{
+    margin-top: 10px;
+    margin-bottom: 50px;
+
+}
+
+.caption-imagewrapper{
+    margin: 0;
+    flex: 1 1 50%;
+}
+.caption-image{
+    border-radius: 4%;
+}
+
+@media (min-width: 1120px) {
+    .header{
+        display: none;
+    }
+.main{
+    padding-top: 42px;
+}
+.main-title {
+    width: 1096px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    
+}
+.title{
+   width: 266px;
+    margin-left: 30px;
+    line-height: 40px;
+    font-size: 28px;
+    letter-spacing: -0.6px;
+    /* спасение  */
+    white-space: nowrap;
+        
+}
+
+
+.title-buttons{
+    display: flex;
+    margin-right: 32px;
+    gap: 32px;
+   
+    
+
+}
+.title-button {
+    
+    width: 168px;
+    height: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    background-size: 40px;
+}
+.repair-icon{
+    background:url(/img/svg/repair.svg) no-repeat right;
+}
+.status-icon{
+    background: url(/img/svg/checkstatus.svg) no-repeat right;
+}
+.label{
+    line-height: 24px;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.main-slidemenu-list{
+    width: 1063px;
+    max-height: 82px;
+    margin-left: 33px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+    
+}
+
+
+
+.caption-text{
+    margin-top: 16px;
+    margin-left: 34px;
+
+
+}
+
+.caption-image{
+    min-width: 532px;
+    min-height: 307px;
+}
+.caption__expand{
+    margin-top: 14px;
+    margin-left: 5px;
+}
+
+}
